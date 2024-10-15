@@ -103,6 +103,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex flex-row justify-around pt-10 items-center">
+            
             <AiOutlineInstagram size={30} className="cursor-pointer mx-2 "/>
             <AiOutlineGithub size={30} className="cursor-pointer mx-2"/>
             <AiOutlineSpotify size={30} className="cursor-pointer mx-2"/>
