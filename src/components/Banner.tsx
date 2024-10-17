@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import About from "./About";
+import Image from "next/image";
 
 const Banner: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -34,7 +35,7 @@ const Banner: React.FC = () => {
           >
             {images.map((image, index) => (
               <div key={index} className="w-full h-full flex-shrink-0 ">
-                <img
+                <Image
                   src={image}
                   alt={`Slide ${index + 1}`}
                   className="flex w-full h-full object-cover "

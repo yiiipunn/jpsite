@@ -13,11 +13,7 @@ import {
 } from "react-icons/ai";
 import { useState } from "react";
 
-function Component() {
-  const { scrollYProgress } = useScroll();
 
-  return <motion.div style={{ scaleX: scrollYProgress }} />;
-}
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const handleNav = () => {
