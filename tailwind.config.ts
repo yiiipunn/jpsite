@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend:  { 
+      backgroundImage: {
+        'hero-pattern': "url('/jf.mp4')",
+      },
       fontFamily : {
         sans:["Cormorant+Garamond"]
       },
@@ -16,6 +19,7 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      
     },
   },
   plugins: [],

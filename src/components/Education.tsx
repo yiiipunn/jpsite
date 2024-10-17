@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Education = () => (
   
-  <div className="container lg:px-50 lg:pt-50 md:ml-20 mx-auto">
+  <div className="container lg:px-50 lg:pt-50 md:ml-20 mx-auto "id="Education">
     <div className="md:w-2/3">
       <h1 className="font-bold italic mb-10 pt-10 text-3xl text-sky-900">
         Education
@@ -32,7 +32,7 @@ const Education = () => (
             <div className="italic md:mb-4 text-slate-600">Primary School</div>
             <div className="mb-4 mt-2 md:hidden">
               <div className="font-bold">💮</div>
-              <div className="text-xs">2012 - 2017</div>
+              <div className="text-xs font-bold  text-sky-900">2012 - 2017</div>
             </div>
            
           </div>
@@ -59,7 +59,7 @@ const Education = () => (
             </div>
             <div className="mb-4 mt-2 md:hidden">
               <div className="font-bold">💮💮</div>
-              <div className="text-xs">2018 - 2023</div>
+              <div className="text-xs font-bold  text-sky-900">2018 - 2023</div>
             </div>
             <div className="mb-5">
             &#8226; Sci-math Intensive English Program<br/>
@@ -91,7 +91,7 @@ const Education = () => (
             <div className="italic md:mb-4 text-slate-600">University</div>
             <div className="mb-4 mt-2 md:hidden">
               <div className="font-bold">💮💮💮</div>
-              <div className="text-xs">2024 - NOW</div>
+              <div className="text-xs font-bold  text-sky-900">2024 - NOW</div>
             </div>
             <div className="mb-5">
             &#8226; Faculty of Engineering,Computer Engneering.
