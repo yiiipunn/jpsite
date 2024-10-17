@@ -21,12 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="z-1000000000"><Navbar/></div>
-       <Banner/>
-        <Education/>
-        <Skills/>
-        <Contact/>
-        <Footer/>
+        <Navbar/>
         {children}
       </body>
     </html>
