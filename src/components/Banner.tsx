@@ -8,11 +8,12 @@ const Banner: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const images = [
-    "../slide1.jpg",
-    "../slide2.jpg",
-    "../slide3.jpg",
-    "../slide4.jpg",
-    "../slide5.jpg"
+    "/slide1.jpg",
+    "/slide2.jpg",
+    "/slide3.jpg",
+    "/slide4.jpg",
+    "/slide5.jpg",
+    "/slide6.jpg",
   ];
 
   const slideCount = images.length;
@@ -26,8 +27,8 @@ const Banner: React.FC = () => {
   }, [slideCount]);
 
   return (
-    <div className="flex flex-col lg:flex-row px-10 py-20 ">
-      <div className="container px-0  lg:px-50 lg:pt-55 mx-auto z-4">
+    <div className="flex flex-col lg:flex-row px-10 pt-20  ">
+      <div className="container px-0 lg:px-50 lg:pt-55 mx-auto z-4">
         <div className=" relative w-85 md:h-70 flex overflow-hidden ">
           <div
             className="flex transition-transform ease-in-out duration-500"
@@ -37,6 +38,8 @@ const Banner: React.FC = () => {
               <div key={index} className="w-full h-full flex-shrink-0 ">
                 <Image
                   src={image}
+                  width ={100}
+                  height = {100}
                   alt={`Slide ${index + 1}`}
                   className="flex w-full h-full object-cover "
                 />

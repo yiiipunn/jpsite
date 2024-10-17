@@ -38,22 +38,22 @@ const Navbar = () => {
         </Link>
         <div className="hidden sm:flex">
           <ul className="hidden sm:flex">
-            <Link href="/about">
+            <Link href="#About">
               <li className="ml-10 uppercase hover:border-b  text-sky-900 hover:text-sky-200 active:text-sky-300 text-xl transition-all duration-500">
                 About me
               </li>
             </Link>
-            <Link href="/education">
+            <Link href="#Education">
               <li className="ml-10 uppercase hover:border-b  text-sky-900 hover:text-sky-200  active:text-sky-300 text-xl transition-all duration-500">
                 Education
               </li>
             </Link>
-            <Link href="/skills">
+            <Link href="#Skills">
               <li className="ml-10 uppercase hover:border-b  text-sky-900 hover:text-sky-200  active:text-sky-300 text-xl transition-all duration-500">
                 Skills
               </li>
             </Link>
-            <Link href="/contact">
+            <Link href="#Contact">
               <li className="ml-10 uppercase hover:border-b  text-sky-900 hover:text-sky-200  active:text-sky-300 text-xl transition-all duration-500">
                 Contact
               </li>
@@ -79,7 +79,7 @@ const Navbar = () => {
         </div>
         <div className="flex-col py-4">
           <ul>
-            <Link href="/">
+            <Link href="#About">
               <li
                 onClick={() => setMenuOpen(false)}
                 className="uppercase hover:border-b text-sky-900 hover:text-sky-200 active:text-sky-300 py-4 cursor-pointer ease-in-out duration-500"
@@ -87,7 +87,7 @@ const Navbar = () => {
                 About me
               </li>
             </Link>
-            <Link href="/">
+            <Link href="#Education">
               <li
                 onClick={() => setMenuOpen(false)}
                 className="uppercase hover:border-b  text-sky-900 hover:text-sky-200 active:text-sky-300 py-4 cursor-pointer ease-in-out duration-500"
@@ -95,7 +95,7 @@ const Navbar = () => {
                 Education
               </li>
             </Link>
-            <Link href="/">
+            <Link href="#Skills">
               <li
                 onClick={() => setMenuOpen(false)}
                 className="uppercase hover:border-b  text-sky-900 hover:text-sky-200 active:text-sky-300 py-4 cursor-pointer ease-in-out duration-500"
@@ -103,7 +103,7 @@ const Navbar = () => {
                 Skills
               </li>
             </Link>
-            <Link href="/">
+            <Link href="#Contact">
               <li
                 onClick={() => setMenuOpen(false)}
                 className="uppercase hover:border-b text-sky-900 hover:text-sky-200 active:text-sky-300 py-4 cursor-pointer ease-in-out duration-500"
