@@ -4,7 +4,6 @@ import {
   AiOutlineInstagram,
   AiOutlineGithub,
 } from "react-icons/ai";
-import { useState } from "react";
 import Link from "next/link";
 
 const Contact = () => (
