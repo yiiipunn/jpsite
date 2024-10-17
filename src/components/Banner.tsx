@@ -38,8 +38,8 @@ const Banner: React.FC = () => {
               <div key={index} className="w-full h-full flex-shrink-0 ">
                 <Image
                   src={image}
-                  width ={100}
-                  height = {100}
+                  width ={1000}
+                  height = {1000}
                   alt={`Slide ${index + 1}`}
                   className="flex w-full h-full object-cover "
                 />

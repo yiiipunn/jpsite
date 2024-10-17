@@ -18,7 +18,7 @@ const About = () => (
       </p>
     </Link>
     <div className="container box-content border-l-2 border-slate-300 flex px-8 py-2 ">
-      <p className="text-md font-bold tracking-wider  text-slate-600">&quot;A Computer Engineering Student 👾 who&apos;s got passion from fallin&apos; in love <p className="italic text-sky-600 hover:text-sky-300">with LENS&quot;</p></p>
+      <p className="text-md font-bold tracking-wider  text-slate-600">&quot;A Computer Engineering Student 👾 who&apos;s got passion from fallin&apos; in love <span className="italic text-sky-600 hover:text-sky-300">with LENS&quot;</span></p>
     </div>
    
     </div>

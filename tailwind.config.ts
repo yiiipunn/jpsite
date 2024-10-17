@@ -1,3 +1,4 @@
+import { defaultConfig } from "next/dist/server/config-shared";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -19,18 +20,4 @@ const config: Config = {
   },
   plugins: [],
 };
-export default config;
-module.exports = {
-
-  plugins: [
-      require('flowbite/plugin')
-  ]
-
-}
-module.exports = {
-
-  content: [
-      "./node_modules/flowbite/**/*.js"
-  ]
-
-}
+export default config
