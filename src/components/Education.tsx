@@ -2,9 +2,9 @@
 import React from "react";
 
 const Education = () => (
-  <div className="container lg:px-50 lg:pt-50 md:ml-20 sm:ml-20 mx-auto z-4">
+  <div className="container lg:px-50 lg:pt-50 md:ml-20  mx-auto z-4">
     <div className="md:w-2/3">
-      <h1 className="font-bold italic mb-10 pt-10 text-3xl  text-sky-900">
+      <h1 className="font-bold italic mb-10 pt-10 text-3xl text-sky-900">
         Education
       </h1>
 
