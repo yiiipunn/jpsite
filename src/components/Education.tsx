@@ -1,8 +1,10 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 
 const Education = () => (
-  <div className="container lg:px-50 lg:pt-50 md:ml-20 mx-auto z-4">
+  
+  <div className="container lg:px-50 lg:pt-50 md:ml-20 mx-auto">
     <div className="md:w-2/3">
       <h1 className="font-bold italic mb-10 pt-10 text-3xl text-sky-900">
         Education
@@ -59,8 +61,10 @@ const Education = () => (
               <div className="font-bold">💮💮</div>
               <div className="text-xs">2018 - 2023</div>
             </div>
-            <div className="mb-10">
-             Sci-math Intensive English Program
+            <div className="mb-5">
+            &#8226; Sci-math Intensive English Program<br/>
+            &#8226; President of Audio&Visual Club since 2023<br/>
+            &#8226; Lead Guitarist of <span className = "hover:text-sky-900 hover:underline transition-all duration-500"><Link href="https://www.instagram.com/multitaskingtheband/">Multitaskingtheband</Link></span>
             </div>
           </div>
         </div>
@@ -89,8 +93,8 @@ const Education = () => (
               <div className="font-bold">💮💮💮</div>
               <div className="text-xs">2024 - NOW</div>
             </div>
-            <div className="mb-10">
-              Faculty of Engineering,Computer Engneering.
+            <div className="mb-5">
+            &#8226; Faculty of Engineering,Computer Engneering.
             </div>
           </div>
         </div>

@@ -10,7 +10,6 @@ export default function Home() {
     <div>
         <Banner/>
         <Education/>
-        <Skills/>
         <Contact/>
         <Footer/>
     </div>
