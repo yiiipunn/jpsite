@@ -14,6 +14,15 @@ const fadeInLeft = {
   }),
 };
 
+const fadeInVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.2, duration: 0.8, ease: "easeOut" },
+  }),
+};
+
 const timelineItems = [
   {
     icon: "💮",
@@ -94,31 +103,50 @@ const Education = () => {
             left: pos.left,
             transform: `scale(${pos.scale})`,
           }}
-          animate={{ y: [0, -20, 0], opacity: [0.7, 1, 0.7] }}
-          transition={{ duration: 8 + Math.random() * 2, repeat: Infinity, ease: "easeInOut" }}
+          initial="hidden"
+          animate="visible"
+          variants={fadeInVariant}
+          custom={index}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 64 64"
-            fill="none"
-            stroke="currentColor"
-            className="w-16 h-16 text-pink-400"
+          <motion.div
+            animate={{ y: [0, -20, 0], opacity: [0.7, 1, 0.7] }}
+            transition={{ duration: 8 + Math.random() * 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <path
-              d="M32 2C20 2 10 12 10 24c0 4 1 8 3 11-2 1-3 3-3 5 0 4 3 7 7 7 3 0 5-2 6-4 1 2 3 4 6 4s5-2 6-4c1 2 3 4 6 4 4 0 7-3 7-7 0-2-1-4-3-5 2-3 3-7 3-11 0-12-10-22-22-22z"
-              fill="currentColor"
-              strokeWidth="1"
-            />
-          </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 64 64"
+              fill="none"
+              stroke="currentColor"
+              className="w-16 h-16 text-pink-400"
+            >
+              <path
+                d="M32 2C20 2 10 12 10 24c0 4 1 8 3 11-2 1-3 3-3 5 0 4 3 7 7 7 3 0 5-2 6-4 1 2 3 4 6 4s5-2 6-4c1 2 3 4 6 4 4 0 7-3 7-7 0-2-1-4-3-5 2-3 3-7 3-11 0-12-10-22-22-22z"
+                fill="currentColor"
+                strokeWidth="1"
+              />
+            </svg>
+          </motion.div>
         </motion.div>
       ))}
 
       <div className="w-full max-w-screen-xl px-4 sm:px-8 lg:px-20 py-20 z-10 relative">
-        <h1 className="font-bold italic text-4xl text-sky-900 mb-16 text-center">
+        <motion.h1
+          className="font-bold italic text-4xl text-sky-900 mb-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           Education
-        </h1>
+        </motion.h1>
 
-        <div className="relative border-l-4 border-gradient-to-b from-sky-700 via-sky-500 to-sky-300 ml-6 lg:ml-16">
+        <motion.div
+          className="relative border-l-4 border-gradient-to-b from-sky-700 via-sky-500 to-sky-300 ml-6 lg:ml-16"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           {timelineItems.map((item, index) => (
             <motion.div
               key={index}
@@ -139,7 +167,7 @@ const Education = () => {
               <motion.div
                 className="absolute left-[-48px] top-[-8px] text-2xl"
                 animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ repeat: Infinity, duration: 6 }}
+                transition={{ repeat: Infinity, duration: 1 }}
               >
                 {item.icon}
               </motion.div>
@@ -163,10 +191,8 @@ const Education = () => {
               </motion.div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-
-      
     </div>
   );
 };

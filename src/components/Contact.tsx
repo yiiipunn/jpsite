@@ -46,7 +46,7 @@ const Contact = () => (
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      Let's Connect 🌸
+      Let&apos;s Connect 🌸
     </motion.h1>
 
     <div className="flex justify-center space-x-10">

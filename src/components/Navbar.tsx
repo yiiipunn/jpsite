@@ -20,7 +20,7 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
   return (
-    <nav className="fixed z-10 flex flex-wrap mt-0 w-full h-24 shadow-xl bg-white scroll-m-20">
+    <nav className="fixed z-50 flex flex-wrap mt-0 w-full h-24 shadow-xl bg-white scroll-m-20 scroll-smooth">
       <div className="flex justify-between items-center h-full w-full px-4 2xl:px-16">
         <Link href="https://github.com/yiiipunn">
           <div className="flex justify-center rounded-[50%] overflow-hidden w-20 h-20 sm:w-10 sm:h-10">
@@ -101,10 +101,14 @@ const Navbar = () => {
               </li>
             </a>
             <a href="#Projects">
-              <li className="ml-10 uppercase hover:border-b  text-sky-900 hover:text-sky-200  active:text-sky-300 text-xl transition-all duration-500">
+              <li
+                onClick={() => setMenuOpen(false)}
+                className="uppercase hover:border-b  text-sky-900 hover:text-sky-200 active:text-sky-300 py-4 cursor-pointer ease-in-out duration-500"
+              >
                 Projects
               </li>
             </a>
+            
             <a href="#Skills">
               <li
                 onClick={() => setMenuOpen(false)}
