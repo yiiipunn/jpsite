@@ -2,7 +2,7 @@
 import React from "react";
 
 const Footer = () => (
-  <div className="flex w-full">
+  <div className="flex w-screen">
     <p className=" bg-sky-900 w-full py-6 mb-0 text-white text-center tracking-widest opacity-80">
       Copyright © 2024 All Rights Reserved. by
       <a

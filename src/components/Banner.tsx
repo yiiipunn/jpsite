@@ -27,39 +27,56 @@ const Banner: React.FC = () => {
   }, [slideCount]);
 
   return (
-    <div className="flex flex-col lg:flex-row px-10 pt-20  ">
+    <div className="flex flex-col lg:flex-row px-10 pt-20">
       <div className="container px-0 lg:px-50 lg:pt-55 mx-auto z-4">
-        <div className=" relative w-85 md:h-70 flex overflow-hidden ">
+        <div className="relative w-full md:h-70 flex overflow-hidden">
           <div
-            className="flex transition-transform ease-in-out duration-500"
-            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            className="flex transition-transform ease-in-out duration-700"
+            style={{
+              transform: `translateX(-${currentSlide * 100}%)`,
+            }}
           >
             {images.map((image, index) => (
-              <div key={index} className="w-full h-full flex-shrink-0 ">
+              <div
+                key={index}
+                className="w-full h-full flex-shrink-0 flex justify-center items-center"
+                style={{
+                  transform: `rotate(-10deg)`, // Slight left rotation for a Polaroid feel
+                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+                  padding: "20px",
+                  border: "10px solid white", // White border around the photo
+                }}
+              >
                 <Image
                   src={image}
-                  width ={1000}
-                  height = {1000}
+                  width={1000}
+                  height={1000}
                   alt={`Slide ${index + 1}`}
-                  className="flex w-full h-full object-cover "
+                  className="w-full h-full object-cover"
                 />
               </div>
             ))}
           </div>
 
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
-            {images.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-1 h-1 rounded-lg md:w-2 md:h-2  opacity-80 ${
-                  currentSlide === index ? "bg-white" : "bg-gray-400"
-                }`}
-              />
-            ))}
+          {/* Left and Right Arrows */}
+          <div className="absolute top-1/2 left-4 z-10 transform -translate-y-1/2">
+            <button
+              onClick={() => setCurrentSlide((prevSlide) => (prevSlide - 1 + slideCount) % slideCount)}
+              className="bg-white opacity-85 rounded-full px-2 py-2 shadow-md hover:bg-gray-200"
+            >
+              <span className="text-xl text-gray-700">&#8592;</span> {/* Left Arrow */}
+            </button>
+          </div>
+
+          <div className="absolute top-1/2 right-4 z-10 transform -translate-y-1/2">
+            <button
+              onClick={() => setCurrentSlide((prevSlide) => (prevSlide + 1) % slideCount)}
+              className="bg-white opacity-85 rounded-full px-2 py-2 shadow-md hover:bg-gray-200"
+            >
+              <span className="text-xl text-gray-700">&#8594;</span> {/* Right Arrow */}
+            </button>
           </div>
         </div>
-    
       </div>
       <About />
     </div>

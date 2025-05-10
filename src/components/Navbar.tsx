@@ -48,6 +48,11 @@ const Navbar = () => {
                 Education
               </li>
             </Link>
+            <Link href="#Projects">
+              <li className="ml-10 uppercase hover:border-b  text-sky-900 hover:text-sky-200  active:text-sky-300 text-xl transition-all duration-500">
+                Projects
+              </li>
+            </Link>
             <Link href="#Skills">
               <li className="ml-10 uppercase hover:border-b  text-sky-900 hover:text-sky-200  active:text-sky-300 text-xl transition-all duration-500">
                 Skills
@@ -93,6 +98,11 @@ const Navbar = () => {
                 className="uppercase hover:border-b  text-sky-900 hover:text-sky-200 active:text-sky-300 py-4 cursor-pointer ease-in-out duration-500"
               >
                 Education
+              </li>
+            </a>
+            <a href="#Projects">
+              <li className="ml-10 uppercase hover:border-b  text-sky-900 hover:text-sky-200  active:text-sky-300 text-xl transition-all duration-500">
+                Projects
               </li>
             </a>
             <a href="#Skills">

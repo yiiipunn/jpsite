@@ -1,106 +1,175 @@
 "use client";
-import React from "react";
+
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Project from "./Project";
+import { motion } from "framer-motion";
 
-const Education = () => (
-  
-  <div className="container lg:px-50 lg:pt-50 md:ml-20 mx-auto "id="Education">
-    <div className="md:w-2/3">
-      <h1 className="font-bold italic mb-10 pt-10 text-3xl text-sky-900">
-        Education
-      </h1>
+const fadeInLeft = {
+  hidden: { opacity: 0, x: -60, scale: 0.95 },
+  visible: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: { delay: i * 0.3, duration: 0.6, ease: "easeOut" },
+  }),
+};
 
-      <div className="relative mt-5 text-left">
-        <div className="flex items-center relative">
-          <div className="hidden md:block w-20">
-            <div className="font-bold">💮</div>
-            <div className="md:flex font-bold space-x-1 text-xs ">
-              <div>2012</div>
-              <div>-</div>
-              <div>2017</div>
-            </div>
-          </div>
+const timelineItems = [
+  {
+    icon: "💮",
+    years: "2012 - 2017",
+    title: "Assumption College Thonburi",
+    level: "Primary School",
+    details: [],
+  },
+  {
+    icon: "💮💮",
+    years: "2018 - 2023",
+    title: "Satriwithaya School",
+    level: "Elementary / High School",
+    details: [
+      "Sci-math Intensive English Program",
+      <>
+        President of{" "}
+        <Link href="https://www.instagram.com/swav.club/" className="font-bold hover:text-sky-900 underline">
+          SW Audio Visual & Education Club
+        </Link>
+      </>,
+      <>
+        Lead Guitarist of{" "}
+        <Link href="https://www.instagram.com/multitaskingtheband/" className="font-bold hover:text-sky-900 underline">
+          Multitaskingtheband
+        </Link>
+      </>,
+    ],
+  },
+  {
+    icon: "💮💮💮",
+    years: "2024 - NOW",
+    title: "King's Mongkut University Of Technology Thonburi",
+    level: "University",
+    details: ["Faculty of Engineering, Computer Engineering."],
+  },
+];
 
-          <div className="border-r-2 border-sky-900 absolute h-full left-1 md:left-20 top-2 z-10">
-            <i className="fas fa-circle -top-1 -ml-2 absolute"></i>
-          </div>
+const generateRandomPosition = () => ({
+  top: `${Math.random() * 80 + 5}%`,
+  left: `${Math.random() * 90 + 5}%`,
+  scale: Math.random() * 0.5 + 0.5,
+});
 
-          <div className="ml-10 border-b">
-            <div className="font-bold text-sky-900">
-              Assumption College Thonburi.
-            </div>
-            <div className="italic md:mb-4 text-slate-600">Primary School</div>
-            <div className="mb-4 mt-2 md:hidden">
-              <div className="font-bold">💮</div>
-              <div className="text-xs font-bold  text-sky-900">2012 - 2017</div>
-            </div>
-           
-          </div>
-        </div>
+const jellyfishCount = 10;
 
-        <div className="flex items-center relative">
-          <div className="hidden md:block w-20">
-            <div className="font-bold">💮💮</div>
-            <div className="md:flex font-bold space-x-1 text-xs">
-              <div>2018</div>
-              <div>-</div>
-              <div>2023</div>
-            </div>
-          </div>
+const Education = () => {
+  const [jellyfishPositions, setJellyfishPositions] = useState(
+    Array(jellyfishCount)
+      .fill(null)
+      .map(() => generateRandomPosition())
+  );
 
-          <div className="border-r-2 border-sky-900 absolute h-full left-1 md:left-20 top-2 z-10">
-            <i className="fas fa-circle -top-1 -ml-2 absolute"></i>
-          </div>
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setJellyfishPositions(() =>
+        Array(jellyfishCount)
+          .fill(null)
+          .map(() => generateRandomPosition())
+      );
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
-          <div className="ml-10 border-b">
-            <div className="font-bold text-sky-900">Satriwithaya School.</div>
-            <div className="italic md:mb-4 text-slate-600">
-              Elementary / High School
-            </div>
-            <div className="mb-4 mt-2 md:hidden">
-              <div className="font-bold">💮💮</div>
-              <div className="text-xs font-bold  text-sky-900">2018 - 2023</div>
-            </div>
-            <div className="mb-5">
-            &#8226; Sci-math Intensive English Program<br/>
-            &#8226; President of Audio&Visual Club since 2023<br/>
-            &#8226; Lead Guitarist of <span className = "hover:text-sky-900 hover:underline transition-all duration-500"><Link href="https://www.instagram.com/multitaskingtheband/">Multitaskingtheband</Link></span>
-            </div>
-          </div>
-        </div>
+  return (
+    <div
+      className="relative z-0 flex flex-col items-center bg-gradient-to-b from-white to-sky-50 w-full overflow-hidden min-h-screen pt-24"
+      id="Education"
+    >
+      <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-pink-100 rounded-full opacity-30 blur-3xl -z-10 animate-pulse" />
 
-        <div className="flex items-center relative">
-          <div className="hidden md:block w-20">
-            <div className="font-bold">💮💮💮</div>
-            <div className="md:flex font-bold space-x-1 text-xs">
-              <div>2024</div>
-              <div>-</div>
-              <div>NOW</div>
-            </div>
-          </div>
+      {jellyfishPositions.map((pos, index) => (
+        <motion.div
+          key={index}
+          className="absolute pointer-events-none opacity-70"
+          style={{
+            top: pos.top,
+            left: pos.left,
+            transform: `scale(${pos.scale})`,
+          }}
+          animate={{ y: [0, -20, 0], opacity: [0.7, 1, 0.7] }}
+          transition={{ duration: 8 + Math.random() * 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 64 64"
+            fill="none"
+            stroke="currentColor"
+            className="w-16 h-16 text-pink-400"
+          >
+            <path
+              d="M32 2C20 2 10 12 10 24c0 4 1 8 3 11-2 1-3 3-3 5 0 4 3 7 7 7 3 0 5-2 6-4 1 2 3 4 6 4s5-2 6-4c1 2 3 4 6 4 4 0 7-3 7-7 0-2-1-4-3-5 2-3 3-7 3-11 0-12-10-22-22-22z"
+              fill="currentColor"
+              strokeWidth="1"
+            />
+          </svg>
+        </motion.div>
+      ))}
 
-          <div className="border-r-2 border-sky-900 absolute h-full left-1 md:left-20 top-2 z-10">
-            <i className="fas fa-circle -top-1 -ml-2 absolute"></i>
-            <i className="fas fa-circle bottom-0 -ml-2 absolute"></i>
-          </div>
+      <div className="w-full max-w-screen-xl px-4 sm:px-8 lg:px-20 py-20 z-10 relative">
+        <h1 className="font-bold italic text-4xl text-sky-900 mb-16 text-center">
+          Education
+        </h1>
 
-          <div className="ml-10 border-b">
-            <div className="font-bold text-sky-900">
-              King&apos;s Mongkut University Of Technology Thonburi.
-            </div>
-            <div className="italic md:mb-4 text-slate-600">University</div>
-            <div className="mb-4 mt-2 md:hidden">
-              <div className="font-bold">💮💮💮</div>
-              <div className="text-xs font-bold  text-sky-900">2024 - NOW</div>
-            </div>
-            <div className="mb-5">
-            &#8226; Faculty of Engineering,Computer Engneering.
-            </div>
-          </div>
+        <div className="relative border-l-4 border-gradient-to-b from-sky-700 via-sky-500 to-sky-300 ml-6 lg:ml-16">
+          {timelineItems.map((item, index) => (
+            <motion.div
+              key={index}
+              className="relative mb-16 pl-8 lg:pl-14 group"
+              variants={fadeInLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={index}
+            >
+              <motion.div
+                className="absolute w-6 h-6 bg-pink-500 border-4 opacity-50 rounded-full left-[-18px] top-1 z-10 shadow-lg shadow-sky-500/50"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.4 + index * 0.2 }}
+              />
+
+              <motion.div
+                className="absolute left-[-48px] top-[-8px] text-2xl"
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ repeat: Infinity, duration: 6 }}
+              >
+                {item.icon}
+              </motion.div>
+
+              <motion.div
+                whileHover={{ y: -4 }}
+                className="bg-white shadow-2xl rounded-3xl p-6 border border-gray-200 transition-all duration-300 hover:shadow-sky-200"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-semibold text-sky-900">{item.years}</span>
+                </div>
+
+                <h3 className="text-xl font-bold text-sky-900 mt-2">{item.title}</h3>
+                <p className="italic text-gray-600">{item.level}</p>
+
+                <ul className="mt-4 text-sm text-gray-800 space-y-1 list-disc list-inside">
+                  {item.details.map((detail, idx) => (
+                    <li key={idx}>{detail}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            </motion.div>
+          ))}
         </div>
       </div>
+
+      
     </div>
-  </div>
-);
+  );
+};
 
 export default Education;
