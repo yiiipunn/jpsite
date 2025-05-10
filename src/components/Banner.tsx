@@ -61,19 +61,41 @@ const Banner: React.FC = () => {
           {/* Left and Right Arrows */}
           <div className="absolute top-1/2 left-4 z-10 transform -translate-y-1/2">
             <button
-              onClick={() => setCurrentSlide((prevSlide) => (prevSlide - 1 + slideCount) % slideCount)}
+              onClick={() =>
+                setCurrentSlide(
+                  (prevSlide) => (prevSlide - 1 + slideCount) % slideCount
+                )
+              }
               className="bg-white opacity-85 rounded-full px-2 py-2 shadow-md hover:bg-gray-200"
             >
-              <span className="text-xl text-gray-700">&#8592;</span> {/* Left Arrow */}
+              {/* Left Arrow SVG */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 text-gray-700"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M15 19l-7-7 7-7" />
+              </svg>
             </button>
           </div>
 
           <div className="absolute top-1/2 right-4 z-10 transform -translate-y-1/2">
             <button
-              onClick={() => setCurrentSlide((prevSlide) => (prevSlide + 1) % slideCount)}
+              onClick={() =>
+                setCurrentSlide((prevSlide) => (prevSlide + 1) % slideCount)
+              }
               className="bg-white opacity-85 rounded-full px-2 py-2 shadow-md hover:bg-gray-200"
             >
-              <span className="text-xl text-gray-700">&#8594;</span> {/* Right Arrow */}
+              {/* Right Arrow SVG */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 text-gray-700"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M9 5l7 7-7 7" />
+              </svg>
             </button>
           </div>
         </div>
