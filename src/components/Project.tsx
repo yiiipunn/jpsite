@@ -41,7 +41,7 @@ const projects = [
    {
     title: "Mod Krapong Application Prototype",
     description:
-      "This project is a Rogue dungeon crawler game but we built with C++ and designed to enhance the classic Rogue gameplay by applying advanced data structures.",
+      "to fix problems when daily users or students around KMUTT campus use Krapong Cars for transportation and to design a “Krapong Car Tracking Application”",
     imageUrl: "/modkrapong.png",
     link: "https://www.figma.com/design/aJfmaFdkBKnVcivgeFT7T7/MOD-Krapong-Clickable-Prototype?fuid=962677229349306932",
   },
@@ -59,10 +59,10 @@ const projects = [
     link: "https://cottony-hurricane-791.notion.site/ef1fd369c3d04d2f9350908608baf9c5?v=58c0c75635a24b638b07dba457420d79&pvs=4",
   },
   {
-    title: "Digicamp/Short film: Advisor",
-    description: "The robot is capable of picking up gold coins from inside the cave and carrying them out. Only gold coins and diamonds will count toward the score. The robot can be manually controlled, but visibility inside the cave is completely limited.",
-    imageUrl: "/expo.jpg",
-    link: "https://cottony-hurricane-791.notion.site/ef1fd369c3d04d2f9350908608baf9c5?v=58c0c75635a24b638b07dba457420d79&pvs=4",
+    title: "Digicamp/Short film: Advisor - Honor Awards 🏆",
+    description: "Inspired by a real cyber murder case in Japan, this short film unravels the death of a young girl who fell into the trap of a serial killer posing as a trusted online friend.",
+    imageUrl: "/digicamp.jpg",
+    link: "https://youtu.be/Dik7yeOq5fI?si=lSXuGb3gGjZK8fLX",
   },
 ];
 
