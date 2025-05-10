@@ -20,8 +20,8 @@ const About = () => (
       </Link>
       <div className="container box-content border-l-2 border-slate-300 flex px-8 py-2">
         <p className="text-md font-bold tracking-wider text-slate-600">
-          &quot;A Computer Engineering Student 👾 who is got passion from falling in love{" "}
-          <span className="italic text-sky-600 hover:text-sky-300">with LENS.&quot;</span>
+          A Computer Engineering Student 👾 who is got passion from falling in love{" "}
+          <span className="italic text-sky-600 hover:text-sky-300">with LENS.</span>
         </p>
       </div>
       <Skills />
